@@ -1,1 +1,1 @@
-# Machine-Learning-Python (Beginner)
+# Machine Learning - Python (Beginner)
