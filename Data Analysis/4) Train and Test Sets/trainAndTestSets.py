@@ -6,6 +6,8 @@ Created on 22.07.2018
 """
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 
 """
 ------------------------VERİ TİPLERİ------------------------------------------
@@ -48,7 +50,7 @@ oneHotEncoder = OneHotEncoder(categorical_features='all')
 
 country = oneHotEncoder.fit_transform(country).toarray()
 
-# create data frames
+# convert to data frame from numpy array
 dfCountry = pd.DataFrame(data=country, index=range(22),
                          columns=['fr', 'tr', 'us'])
 dfNumber = pd.DataFrame(data=numericInfo, index=range(22),
@@ -56,7 +58,22 @@ dfNumber = pd.DataFrame(data=numericInfo, index=range(22),
 dfGender = pd.DataFrame(data=gender, index=range(22), columns=['gender'])
 
 # concatenate data frames
-result = pd.concat([dfCountry, dfNumber, dfGender], axis=1)
+data = pd.concat([dfCountry, dfNumber], axis=1)
+output = dfGender
 
-# print result
-print(result)
+# separate to data as train and test data
+xTrain, xTest, yTrain, yTest = train_test_split(data, output,
+                                                test_size=0.33, random_state=0)
+"""
+Standardisation : Z = (x-mean)/(standard deviation)
+    verilerin birbirleri ile olan farkını bozmadan orta değerden ne kadar
+  saptıklarını gösterecek şekilde indirgenmesi
+
+Normalisation : Z = (x-min(x))/(max(x)-min(x))
+    birebir bir alana indirgenmesi. marjinal değerler olduğunda sıkıntılıdır.
+"""
+
+# scale train and test data
+sc = StandardScaler()
+scaledXTrain = sc.fit_transform(xTrain)
+scaledXTest = sc.fit_transform(xTest)
