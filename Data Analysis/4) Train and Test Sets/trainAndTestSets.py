@@ -9,29 +9,7 @@ from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 
-"""
-------------------------VERİ TİPLERİ------------------------------------------
-
-Karegorik: sınıflandırılmaya uygun bilgi(erkek mi kadın mı gibi)
-    Nominal: ne sıralanabilen ne de ölçülebilen veriler.(araba markası ...)
-binomial (evet hayır gibi iki durum), polynomial(tr,us,en,fr...)
-    Ordinal: Sıraya sokulabilen, büyüklük küçüklük ilişkisi olabilen ama
-ölçülemeyen veriler.(kapı no, plaka no)
-    Sayısal: (insan sayısı, ev büyüklüğü vb.)
-    Oransal(ratio): birbirine göre orantılanabilen,çarpıp bölünebilen veriler
-(yaş) birbirine orantılanabilecek anlamında.
-    Aralık(interval): belirli bir aralıkta olan değerler.(sıcaklık!)
-------------------------------------------------------------------------------
-sayı tipindeki verilerle çalışan bir makine öğrenmesi algoritmasına yazısal
-verileri de verebilmek için bu tipler arasında geçişler yapabilmek gerekecek.
-------------------------------------------------------------------------------
-tr,us,fr olana 1,2,3 gibi sayılar vermek bu değerlerin sıralanabilir olmasından
-dolayı sorun olabilir bunun yerine bu üçünü ek birer sütun haline getirebiliriz
-tr=1 olanda diğer ikisi 0 olacak şekilde.
-------------------------------------------------------------------------------
-
-"""
-
+# read data from excel
 data = pd.read_csv('data.csv')
 
 # separate different data
