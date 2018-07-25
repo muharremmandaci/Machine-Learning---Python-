@@ -5,9 +5,9 @@
 
   bazı özellikler(feature) birbiri ile korelasyon içindedir. İl bilgisi ve plaka bilgisi birlikte verilmesi bu duruma örnektir. Bu şekildeki verilerin birlikte data setinde bulunması sorun teşkil edebilir.
 
-> gender = m m w m w w m
-> m      = 1 1 0 1 0 0 1
-> w      = 0 0 1 0 1 1 0
+gender = m m w m w w m
+m      = 1 1 0 1 0 0 1
+w      = 0 0 1 0 1 1 0
 
   gender m ve w olacak şekilde ayarlandıktan sonra bunlardan biri alınması yeterli olacaktır. Yoksa bu özelliğinin etkisi diğerlerinden fazla olacaktır.
 
