@@ -1,13 +1,13 @@
 import pandas as pd
 from sklearn.cross_validation import train_test_split
-from sklearn.preprocessing import StandardScaler
+# from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
-data = pd.read_csv('satislar.csv')
+data = pd.read_csv('sales.csv')
 
-months = data[['Aylar']]
-sales = data[['Satislar']]
+months = data[['Months']]
+sales = data[['Sales']]
 
 xTrain, xTest, yTrain, yTest = train_test_split(months, sales, test_size=0.33,
                                                 random_state=0)
@@ -30,6 +30,6 @@ yTrain = yTrain.sort_index()
 plt.plot(xTrain, yTrain)
 plt.plot(xTest, predicts)
 
-plt.title("Aylara göre satış")
-plt.xlabel("Aylar")
-plt.ylabel("Satışlar")
+plt.title("Linear Regression")
+plt.xlabel("Months")
+plt.ylabel("Sales")
