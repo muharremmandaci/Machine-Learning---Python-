@@ -17,6 +17,7 @@ gender m ve w olacak şekilde ayarlandıktan sonra bunlardan biri alınması yet
 - H0 : null hypothesis : temelde kabul edilen hipotez
 - H1 : alternative hypothesis
 
+p-değerinin eşik değeri genellikle 0.05 olarak seçilir.
 p-değeri küçüldükçe H0 hatalı olma ihtimali artar.
 p-değeri büyüdükçe H1 hatalı olma ihtimali artar.
 
